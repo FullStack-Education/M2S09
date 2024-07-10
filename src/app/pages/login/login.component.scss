@@ -1,0 +1,84 @@
+@mixin margin-x{ //Declaração de mixin no scss sem parâmetros
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@mixin display-flex ($justify, $align){ //Declaração de mixin no scss com parâmetros
+	display: flex;
+	justify-content: $justify; //Uso de parâmetro no mixin
+	align-items: $align; //Uso de parâmetro no mixin
+}
+
+div {
+	&.form-login {
+		form {
+			margin-top: 100px;
+			div {
+				@include margin-x; //Uso de mixin no scss
+				label {
+					@include display-flex (start, start);
+					&.label-nome {
+						color: #000;
+						font-size: 20px;
+						font-weight: bold;
+						margin-top: 10px;
+					}
+				}
+                button{
+					background-color: aquamarine;
+					@include display-flex (space-between, center);
+					&:hover{
+						background-color: #99ec99;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+//Diferenças de sintaxe entre css e scss
+
+//css
+// :root{
+//     --color-primary: #FF0000; //Declaração de variável no css
+//     --small-size: 14px;
+// }
+// div{
+//     margin-bottom: var(--small-size); //Uso de variável no css
+// }
+// div span{ //Seleção de elemento filho
+//     color: var(--color-primary); //Uso de variável no css
+// }
+
+//scss
+$color-primary: #FF0000; //Declaração de variável no scss
+$small-size: 14px; //Declaração de variável no scss
+span{
+	color: $color-primary; //Uso de variável no scss
+}
+
+div{
+	&.example{ //Seleção de elemento com classe
+		margin-bottom: $small-size; //Uso de variável no scss
+		
+		@include display-flex (center, center); //Uso de mixin no scss
+	}
+}
+
+.btn {
+    display: inline-block;
+	margin-left: 12px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+	transition: .3s;
+	&:hover {
+		background-color: #303f9f;
+	}
+}
