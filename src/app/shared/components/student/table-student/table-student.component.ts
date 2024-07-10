@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   //e com isso não é necessário importar qualquer dependência que ele necessite
   //pois ele já está sendo importado pelo módulo StudentComponentsModule
   templateUrl: './table-student.component.html',
-  styleUrl: './table-student.component.css'
+  styleUrl: './table-student.component.scss'
 })
 export class TableStudentComponent {
 

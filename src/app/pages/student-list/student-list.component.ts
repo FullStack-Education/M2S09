@@ -6,10 +6,10 @@ import { StudentComponentsModule } from '../../shared/components/student-compone
   standalone: true,
   imports: [ //Importa o módulo de componentes de estudante
     //Junto a ele vem os componentes de TableStudentComponent e ListStudentComponent
-    StudentComponentsModule
+    StudentComponentsModule,
   ],
   templateUrl: './student-list.component.html',
-  styleUrl: './student-list.component.css'
+  styleUrl: './student-list.component.scss'
 })
 export class StudentListComponent {
 

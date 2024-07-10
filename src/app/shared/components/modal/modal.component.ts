@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true, //Componente é dado como standalone
   imports: [],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css'
+  styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
 

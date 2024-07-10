@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true, //Componente é dado como standalone
   imports: [],
   templateUrl: './input.component.html',
-  styleUrl: './input.component.css'
+  styleUrl: './input.component.scss'
 })
 export class InputComponent {
   @Input() legenda: string = "";
