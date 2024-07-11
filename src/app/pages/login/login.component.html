@@ -1,17 +1,43 @@
 <div class="form-login">
-    <form>
-        <div>
-            <label for="" class="label-nome">Nome:</label>
-            <br />
-            <app-input legenda="Nome..."/>
-        </div>
-        <div>
-            <label for="">Senha:</label>
-            <br />
-            <app-input legenda="Senha..."/>
-            <br />
-            <span>Exemplo de texto aqui...</span>
-        </div>
-        <button class="btn">Entrar</button>
-    </form>
+  <form>
+    <div>
+      <label for="" class="label-nome">Nome:</label>
+      <br />
+      <app-input legenda="Nome..." />
+    </div>
+    <div>
+      <label for="">Senha:</label>
+      <br />
+      <app-input legenda="Senha..." />
+      <br />
+      <span>Exemplo de texto aqui...</span>
+    </div>
+    <button class="btn">Entrar</button>
+  </form>
+</div>
+<br />
+<br />
+<br />
+
+<!-- Representar um layout em flexbox com 5 itens, todos um ao lado do outro. -->
+<div class="flex-container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+  <div class="item">Item 4</div>
+  <div class="item">Item 5</div>
+</div>
+<br />
+<br />
+<br />
+
+<!-- Representar um layout em grid com 5 itens. -->
+<div class="grid-container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+  <!-- O item 4 deve ocupar 2 colunas. -->
+  <div class="item row-2">Item 4</div>
+  <!-- O item 5 deve ocupar 2 linhas e 2 colunas. -->
+  <div class="item col-2 row-2">Item 5</div>
 </div>

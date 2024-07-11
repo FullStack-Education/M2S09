@@ -19,10 +19,6 @@ h1 {
 	text-align: center;
 	margin-bottom: 20px;
 }
-form {
-	display: flex;
-	flex-direction: column;
-}
 label {
 	margin-bottom: 5px;
 	font-weight: bold;
@@ -44,5 +40,52 @@ button {
 	&:hover {
 		background-color: #003D3C;
 		color: #AAE9FF;
+	}
+}
+.container-grid{
+	//Instrução para definir o display como grid
+	display: grid;
+	//Instrução para definir a quantidade de colunas
+	grid-template-columns: 1fr;
+	//Instrução para definir o espaçamento entre as colunas
+	gap: 15px;
+	div{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+//Instrução para definir o breakpoint para despositivos com largura de tela entre 1024px e 1440px
+@media (min-width: 1024px) and (max-width: 1440px) {
+    h1{
+		font-size: 40px;
+	}
+	form{
+		label{
+			font-size: 20px;
+		}
+	}
+	.container-grid{
+		//Intrução para definir a quantidade de colunas
+		grid-template-columns: repeat(3, 1fr); 
+	}
+	button{
+		//Instrução para definir a quantidade de colunas que aquele item irá oculpar
+		grid-column: span 2;
+	}
+	.col-2{
+		grid-column: span 2;
+	}
+}
+
+//Instrução para definir o breakpoint para despositivos com largura de tela entre 440px e 768px
+@media (min-width: 440px) and (max-width: 768px) {
+    h1{
+		font-size: 35px;
+	}
+	form{
+		label{
+			font-size: 20px;
+		}
 	}
 }
