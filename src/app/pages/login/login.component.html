@@ -1,20 +1,29 @@
-<div class="form-login">
-  <form>
-    <div>
-      <label for="" class="label-nome">Nome:</label>
-      <br />
-      <app-input legenda="Nome..." />
-    </div>
-    <div>
-      <label for="">Senha:</label>
-      <br />
-      <app-input legenda="Senha..." />
-      <br />
-      <span>Exemplo de texto aqui...</span>
-    </div>
-    <button class="btn">Entrar</button>
-  </form>
-</div>
+<!--Exemplo de utilização do componente de card do Angular Material.-->
+<mat-card class="example-card" appearance="outlined">
+  <!-- Cabeçalho do card. -->
+  <mat-card-header>
+    <!-- Título do card. -->
+    <mat-card-title class="title-card">Login</mat-card-title>
+  </mat-card-header>
+  <!-- Conteúdo do card. -->
+  <mat-card-content>
+    <form>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nome:</mat-label>
+          <input matInput placeholder="Digite seu nome" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Senha: </mat-label>
+          <input matInput placeholder="Digite sua senha" />
+        </mat-form-field>
+      </div>
+      <button class="btn">Entrar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
 <br />
 <br />
 <br />

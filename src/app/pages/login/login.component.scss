@@ -1,41 +1,106 @@
-@mixin margin-x{ //Declaração de mixin no scss sem parâmetros
-	margin-left: 10px;
-	margin-right: 10px;
+//Estilizações do componente login
+$color-primary: #ff0000; //Declaração de variável no scss
+$small-size: 14px; //Declaração de variável no scss
+
+.btn {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: $color-primary;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  &:hover {
+    background-color: #303f9f;
+  }
 }
 
-@mixin display-flex ($justify, $align){ //Declaração de mixin no scss com parâmetros
-	display: flex;
-	justify-content: $justify; //Uso de parâmetro no mixin
-	align-items: $align; //Uso de parâmetro no mixin
+.flex-container {
+  display: flex;
+  background-color: #303f9f;
+  padding: 10px;
+  height: 120px;
+  .item {
+    padding: 10px;
+    background-color: #6374e6;
+    margin-right: 5px;
+  }
+}
+
+.grid-container {
+  //Instrução para definir o display como grid
+  display: grid;
+  //Instrução para definir a quantidade de colunas
+  grid-template-columns: repeat(3, 1fr);
+  //Instrução para definir a quantidade de linhas
+  grid-template-rows: repeat(3, 1fr);
+  background-color: #303f9f;
+  padding: 10px;
+  //Instrução para definir o espaçamento entre as colunas
+  gap: 10px;
+  .item {
+    padding: 10px;
+    background-color: #6374e6;
+  }
+  .col-2 {
+    grid-column: span 2;
+  }
+  .row-2 {
+    grid-row: span 2;
+  }
+}
+
+.title-card {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+
+//Estudos de SCSS
+
+@mixin margin-x {
+  //Declaração de mixin no scss sem parâmetros
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@mixin display-flex($justify, $align) {
+  //Declaração de mixin no scss com parâmetros
+  display: flex;
+  justify-content: $justify; //Uso de parâmetro no mixin
+  align-items: $align; //Uso de parâmetro no mixin
 }
 
 div {
-	&.form-login {
-		form {
-			margin-top: 100px;
-			div {
-				@include margin-x; //Uso de mixin no scss
-				label {
-					@include display-flex (start, start);
-					&.label-nome {
-						color: #000;
-						font-size: 20px;
-						font-weight: bold;
-						margin-top: 10px;
-					}
-				}
-                button{
-					background-color: aquamarine;
-					@include display-flex (space-between, center);
-					&:hover{
-						background-color: #99ec99;
-					}
-				}
-			}
-		}
-	}
+  &.form-login {
+    form {
+      margin-top: 100px;
+      div {
+        @include margin-x; //Uso de mixin no scss
+        label {
+          @include display-flex(start, start); //Uso de mixin no scss
+          &.label-nome {
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+          }
+        }
+        button {
+          background-color: aquamarine;
+          @include display-flex(space-between, center);
+          &:hover {
+            background-color: #99ec99;
+          }
+        }
+      }
+    }
+  }
 }
-
 
 //Diferenças de sintaxe entre css e scss
 
@@ -51,71 +116,30 @@ div {
 //     color: var(--color-primary); //Uso de variável no css
 // }
 
-//scss
-$color-primary: #FF0000; //Declaração de variável no scss
-$small-size: 14px; //Declaração de variável no scss
-span{
-	color: $color-primary; //Uso de variável no scss
+span {
+  color: $color-primary; //Uso de variável no scss
 }
 
-div{
-	&.example{ //Seleção de elemento com classe
-		margin-bottom: $small-size; //Uso de variável no scss
-		
-		@include display-flex (center, center); //Uso de mixin no scss
-	}
+div {
+  &.example {
+    //Seleção de elemento com classe
+    margin-bottom: $small-size; //Uso de variável no scss
+
+    @include display-flex(center, center); //Uso de mixin no scss
+  }
 }
 
-.btn {
-    display: inline-block;
-	margin-left: 12px;
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: $color-primary;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-	transition: .3s;
-	&:hover {
-		background-color: #303f9f;
-	}
+//Aula angular material
+
+//Mesmo que um componente já possua sua estilização padrão,
+//é possível sobrescrever essas estilizações
+mat-card {
+  //Opção 1 - por variavel
+  --mdc-outlined-card-container-color: #303f9f;
+  //Opção 2 - por propriedade
+  width: 400px;
 }
 
-
-
-.flex-container{
-	display: flex;
-	background-color: #303f9f;
-	padding: 10px;
-	height: 120px;
-	.item{
-		padding: 10px;
-		background-color: #6374e6;
-		margin-right: 5px;
-	}
-}
-
-.grid-container{
-	//Instrução para definir o display como grid
-	display: grid;
-	//Instrução para definir a quantidade de colunas
-	grid-template-columns: repeat(3, 1fr);
-	//Instrução para definir a quantidade de linhas
-	grid-template-rows: repeat(3, 1fr);
-	background-color: #303f9f;
-	padding: 10px;
-	//Instrução para definir o espaçamento entre as colunas
-	gap: 10px;
-	.item{
-		padding: 10px;
-		background-color: #6374e6;
-	}
-	.col-2{
-		grid-column: span 2;
-	}
-	.row-2{
-		grid-row: span 2;
-	}
+mat-form-field {
+  width: 100%;
 }
