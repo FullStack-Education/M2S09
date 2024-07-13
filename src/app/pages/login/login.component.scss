@@ -1,32 +1,25 @@
 //Estilizações do componente login
-$color-primary: #ff0000; //Declaração de variável no scss
+$color-primary: #303f9f; //Declaração de variável no scss
+$color-secundary: #6374e6; //Declaração de variável no scss
 $small-size: 14px; //Declaração de variável no scss
 
 .btn {
-  display: inline-block;
-  margin-left: 12px;
-  padding: 10px 20px;
   font-size: 1em;
-  color: #fff;
-  background-color: $color-primary;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: center;
-  transition: 0.3s;
-  &:hover {
-    background-color: #303f9f;
-  }
+  width: 100%;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
 }
 
 .flex-container {
   display: flex;
-  background-color: #303f9f;
+  background-color: $color-primary;
   padding: 10px;
   height: 120px;
   .item {
     padding: 10px;
-    background-color: #6374e6;
+    background-color: $color-secundary;
     margin-right: 5px;
   }
 }
@@ -38,13 +31,13 @@ $small-size: 14px; //Declaração de variável no scss
   grid-template-columns: repeat(3, 1fr);
   //Instrução para definir a quantidade de linhas
   grid-template-rows: repeat(3, 1fr);
-  background-color: #303f9f;
+  background-color: $color-primary;
   padding: 10px;
   //Instrução para definir o espaçamento entre as colunas
   gap: 10px;
   .item {
     padding: 10px;
-    background-color: #6374e6;
+    background-color: $color-secundary;
   }
   .col-2 {
     grid-column: span 2;
@@ -59,6 +52,22 @@ $small-size: 14px; //Declaração de variável no scss
   margin-bottom: 10px;
 }
 
+.bg-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: $color-secundary;
+}
+
+.hiperlink {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    color: #b4b4b4;
+  }
+}
 
 //Estudos de SCSS
 

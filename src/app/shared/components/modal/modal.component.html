@@ -1,1 +1,12 @@
-<p>modal works!</p>
+<h2 mat-dialog-title>Recuperação de senha</h2>
+<mat-dialog-content>
+  <p>Digite seu email para a recuperação de senha</p>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="email" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button cdkFocusInitial>Enviar</button>
+</mat-dialog-actions>
